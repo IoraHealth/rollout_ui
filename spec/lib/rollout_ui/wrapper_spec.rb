@@ -67,6 +67,7 @@ describe RolloutUi::Wrapper do
       @rollout_ui.add_feature(:featureA)
 
       @rollout_ui.features.should == ["featureA"]
+      @rollout_ui.rollout.features.should == [:featureA]
     end
   end
 
@@ -77,6 +78,7 @@ describe RolloutUi::Wrapper do
       @rollout_ui.remove_feature(:feature)
 
       @rollout_ui.features.should == []
+      @rollout_ui.rollout.features.should == []
     end
   end
 end
