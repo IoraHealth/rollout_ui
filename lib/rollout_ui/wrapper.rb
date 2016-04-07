@@ -38,6 +38,9 @@ module RolloutUi
     # rollout added a delete method in 2.2.1
     # since we are using an older version inline the implementation here
     def rollout_delete(feature)
+      # rollout uses symbols but rollout_ui uses strings
+      feature = feature.to_sym
+
       # access rollout private methods
       features_key = rollout.send(:features_key)
       feature_key = rollout.send(:key, feature)

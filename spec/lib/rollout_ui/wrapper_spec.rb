@@ -64,7 +64,7 @@ describe RolloutUi::Wrapper do
 
   describe "#add_feature" do
     it "adds feature to the list of features" do
-      @rollout_ui.add_feature(:featureA)
+      @rollout_ui.add_feature('featureA')
 
       @rollout_ui.features.should == ["featureA"]
       @rollout_ui.rollout.features.should == [:featureA]
@@ -73,9 +73,9 @@ describe RolloutUi::Wrapper do
 
   describe "#remove_feature" do
     it "removes a feature from the list of features" do
-      @rollout_ui.add_feature(:feature)
+      @rollout_ui.add_feature('feature')
 
-      @rollout_ui.remove_feature(:feature)
+      @rollout_ui.remove_feature('feature')
 
       @rollout_ui.features.should == []
       @rollout_ui.rollout.features.should == []
